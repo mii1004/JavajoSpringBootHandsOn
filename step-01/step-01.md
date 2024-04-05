@@ -44,7 +44,7 @@ IDEまたはコマンドラインからプロジェクトをビルドします�
 ビルドが成功したら、IDEまたはコマンドラインからSpring Bootアプリケーションを起動します。
 
 - Mac, Linuxの場合: `$ ./gradlew bootRun`
-- Windowsの場合: `gradlew.bat bootRun`
+- Windowsの場合: `> gradlew.bat bootRun`
 
 ### 4. アプリケーションの動作確認
 ブラウザを開いて `http://localhost:8080` にアクセスし、404エラーが返ることを確認します。  

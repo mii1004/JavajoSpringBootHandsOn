@@ -105,7 +105,7 @@ public class MemoService {
                     memo.id(),
                     memo.created_at(),
                     memo.body(),
-                    user.map(u -> new MemoResponse.User(u.id(), u.name(), u.emailAddress())).orElse(null)
+                    user.map(u -> new MemoResponse.User(u.id(), u.emailAddress(), u.name())).orElse(null)
             ));
         }
         
@@ -221,7 +221,7 @@ public MemoResponse createMemo(MemoRequest request) {
             memo.id(),
             memo.created_at(),
             memo.body(),
-            user.map(u -> new MemoResponse.User(u.id(), u.name(), u.emailAddress())).orElse(null)
+            user.map(u -> new MemoResponse.User(u.id(), u.emailAddress(), u.name())).orElse(null)
     );
 }
 ```
