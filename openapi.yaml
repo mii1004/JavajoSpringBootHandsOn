@@ -5,7 +5,7 @@ info:
     Java女子部のSpring Bootハンズオンで作成するメモAPIの仕様書です
   version: 1.0.0
 servers:
-  - url: https://localhost:8080/api
+  - url: http://localhost:8080
 paths:
   /memos:
     get:
@@ -13,14 +13,6 @@ paths:
       operationId: getMemos
       tags:
         - Memo
-      parameters:
-        - in: query
-          name: user_id
-          schema:
-            type: integer
-            format: int64
-          description: メモを作成したユーザーのID（任意）
-          required: false
       responses:
         '200':
           description: Success
@@ -47,13 +39,13 @@ paths:
                 body:
                   type: string
                   description: 本文
-                user_id:
+                userId:
                   type: integer
                   format: int64
                   description: メモを作成するユーザーID
               required:
                 - body
-                - user_id
+                - userId
       responses:
         '201':
           description: Success
@@ -150,16 +142,16 @@ components:
           type: integer
           format: int64
           description: ユーザーID
-        email_address:
+        emailAddress:
           type: string
           format: email
           description: ユーザーのメールアドレス
-        user_name:
+        userName:
           type: string
           description: ユーザー名
       required:
-        - email_address
-        - user_name
+        - emailAddress
+        - userName
     Memo:
       type: object
       properties:
@@ -167,7 +159,7 @@ components:
           type: integer
           format: int64
           description: メモID
-        created_at:
+        createdAt:
           type: string
           format: date-time
           description: 作成日時
@@ -177,6 +169,6 @@ components:
         user:
           $ref: '#/components/schemas/User'
       required:
-        - created_at
+        - createdAt
         - body
         - user
